@@ -1,0 +1,3 @@
+I release minecopy.py under CC0 license, the text of which is included.
+I am not wholly sure what license some of the code in SendKeysCtype are published, but my modifications can also be considered CC0.
+I generated app_maximum.lua using the program LuaSrcDiet. I would argue that makes it mine to relicense but the law is very fuzzy and IANAL, so I will mention it is MIT licensed.
