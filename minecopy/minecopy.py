@@ -16,6 +16,8 @@ crop_endings = True
 switch_delay = 10
 # compress if lua is installed
 try_compress = True
+# remove directory structure when copying files
+crop_directories = True
 ###############################################
 
 # location of lua compression script
@@ -78,6 +80,8 @@ def loadfile(filename):
         
 def copyfile(filename):
     data = loadfile(filename)
+    if crop_directories:
+        filename = os.path.basename(filename)
     if crop_endings:
         filename = filename.replace(".lua","")
     typeout("rm "+filename+"\nedit "+filename+"\n")
@@ -89,8 +93,8 @@ if __name__ == "__main__":
     try:
         windowswitch()
     except:
-        print "Select minecraft window manually and make sure a computercraft terminal is open!"
-        print "You have %d seconds or bad things will happen!!!" % switch_delay
+        print("Select minecraft window manually and make sure a computercraft terminal is open!")
+        print("You have %d seconds or bad things will happen!!!" % switch_delay)
         time.sleep(switch_delay)
     for filename in sys.argv[1:]:
         copyfile(filename)

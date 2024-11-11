@@ -316,7 +316,7 @@ class KeyAction(object):
     def Run(self):
         "Execute the action"
         inputs = self.GetInput()
-        print "Sending "+str(self)
+        print("Sending "+str(self))
         return SendInput(
             len(inputs),
             ctypes.byref(inputs),
